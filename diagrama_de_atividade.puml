@@ -1,0 +1,11 @@
+@startuml
+start
+:Leitura de sensores;
+if (Ajustes necessários?) then (sim)
+    :Ativar/Desativar atuadores;
+else (não)
+    :Mantém estado;
+endif
+:Enviar dados ao aplicativo;
+stop
+@enduml

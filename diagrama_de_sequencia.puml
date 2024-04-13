@@ -1,0 +1,16 @@
+@startuml
+actor Usuario
+participant Aplicativo
+participant Controlador
+participant Sensor
+participant Atuador
+
+Usuario -> Aplicativo : Ver dados
+Aplicativo -> Controlador : Solicita atualização
+Controlador -> Sensor : Obter leitura
+Sensor -> Controlador : Retorna dados
+Controlador -> Atuador : Enviar comando
+Atuador -> Controlador : Confirmar ação
+Controlador -> Aplicativo : Enviar status
+Aplicativo -> Usuario : Mostrar status
+@enduml

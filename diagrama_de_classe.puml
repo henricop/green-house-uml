@@ -1,0 +1,41 @@
+@startuml
+class Sensor {
+    +id: int
+    +tipo: string
+    +valorLeitura: float
+    +dataHora: datetime
+    +obterLeitura(): void
+}
+
+class Atuador {
+    +id: int
+    +tipo: string
+    +estado: boolean
+    +dataHora: datetime
+    +ativar(): void
+    +desativar(): void
+}
+
+class Controlador {
+    +id: int
+    +status: string
+    +lerSensores(): void
+    +controlarAtuadores(): void
+}
+
+class Usuario {
+    +id: int
+    +nome: string
+    +configuracoes: string
+    +atualizarConfiguracoes(): void
+}
+
+class Aplicativo {
+    +exibirDados(): void
+    +enviarComando(): void
+}
+
+Controlador "1" -- "*" Sensor
+Controlador "1" -- "*" Atuador
+Aplicativo ..> Controlador : comunica
+@enduml
